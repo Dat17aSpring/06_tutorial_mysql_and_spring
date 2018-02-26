@@ -14,9 +14,9 @@ So you will now have these 3:
 This will add the folowing dependency to you pom.xml file
 
 ````   
- 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+  <dependency>
+	<groupId>mysql</groupId>
+	<artifactId>mysql-connector-java</artifactId>
+	<scope>runtime</scope>
+  </dependency>
 ````
