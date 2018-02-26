@@ -27,6 +27,10 @@ If you have an existing application without the mysql dependency added from the 
 * In that create a new file and call it DbConnection
 
 ````     
+  import java.sql.Connection;
+  import java.sql.DriverManager;
+  import java.sql.SQLException;
+  
   public class DbConnection {
     private static String USERNAME = "USERNAME";
     private static String PASSWORD = "PASSWORD";
