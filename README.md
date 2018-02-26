@@ -5,11 +5,11 @@
 
 When choosing the dependencies you should now also add the **SQL -> MySql** dependency.    
 So you will now have these 3: 
-````   
-  Web -> Web
-  Template Engines -> Thymeleaf
-  SQL -> MySql
-````    
+ 
+* Web -> Web
+* Template Engines -> Thymeleaf
+* **SQL -> MySql**
+  
 
 This will add the folowing dependency to you pom.xml file
 
