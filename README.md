@@ -42,6 +42,59 @@ If you have an existing application without the mysql dependency added from the 
   }
 ````    
 
+### StudentDbRepsitory
+Create a new repository, call it **StudentDbRepsitory**, and remember to implement your **IStudentRepository** interface.
+
+Add the following attributes and constructor to the class
+
+````     
+    private ArrayList<User> users = new ArrayList<>();
+    private Connection conn = null;
+    private PreparedStatement prepareStatement = null;
+    private ResultSet result = null;
+    
+    public StudentInMemoryRepository() {
+
+        try {
+           conn = DbConnection.getConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+````    
+
+In the readAll method add:
+
+````     
+    @Override
+    public ArrayList<User> readAll() {
+        try {
+            prepareStatement = conn.prepareStatement("SELECT * FROM users");
+            result = prepareStatement.executeQuery();
+
+            while (result.next())
+            {
+                int id = result.getInt("users_id");
+                String userName = result.getString("user_name");
+                String email = result.getString("email");
+                String password = result.getString("password");
+
+                System.out.println(id + ", " + userName + ", " + email + ", " + password );
+
+                userss.add(new User(id, userName, email, password));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
+
+````    
+
+Change the code in your Controller to make use of this **StudentDbRepsitory**, and run the application and see the result in the browser.
+
+_<div align="right">&copy; clbo@kea.dk, 2018</div>_
 
 
 
