@@ -20,3 +20,7 @@ This will add the folowing dependency to you pom.xml file
 	<scope>runtime</scope>
   </dependency>
 ````
+If you have an existing application without the mysql dependency added from the beginning, you can always write this directly into the pom.xml file. 
+
+
+
