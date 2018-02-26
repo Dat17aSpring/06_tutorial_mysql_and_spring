@@ -24,7 +24,7 @@ If you have an existing application without the mysql dependency added from the 
 
 ### Connect to the database
 * Create a new package and call it **dao**
-* In that create a new file and call it DbConnection
+* In that create a new file and call it DbConnection.java
 
 ````     
   import java.sql.Connection;
