@@ -42,8 +42,8 @@ If you have an existing application without the mysql dependency added from the 
   }
 ````    
 
-### StudentDbRepsitory
-Create a new repository, call it **StudentDbRepsitory**, and remember to implement your **IStudentRepository** interface.
+### UserDbRepsitory
+Create a new repository, call it **UserDbRepsitory**, and remember to implement a **IUserRepository** interface.
 
 Add the following attributes and constructor to the class
 
@@ -91,8 +91,6 @@ In the readAll method add:
     }
 
 ````    
-
-Change the code in your Controller to make use of this **StudentDbRepsitory**, and run the application and see the result in the browser.
 
 _<div align="right">&copy; clbo@kea.dk, 2018</div>_
 
