@@ -28,15 +28,16 @@ If you have an existing application without the mysql dependency added from the 
 
 ````     
   public class DbConnection {
-    private static String USERNAME = "studentsadmin";
-    private static String PASSWORD = "qwerty_1234";
-    private static String CONN_STRING = "jdbc:mysql://den1.mysql2.gear.host/studentsadmin";
+    private static String USERNAME = "USERNAME";
+    private static String PASSWORD = "PASSWORD";
+    private static String CONN_STRING = "jdbc:mysql://den1.mysql2.gear.host/DATABASENAME";
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
     }
   }
 ````    
+
 
 
 
