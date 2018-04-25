@@ -96,14 +96,14 @@ In the readAll method add:
 In the create method add:
 
 ````     
- @Override
+    @Override
     public void create(Student student) {
 
         try {
 
             preparedStatement = conn.prepareStatement("INSERT INTO students(first_name, last_name, enrollment_date, cpr)  VALUES (?,?,?, ?)");
 
-            preparedStatement.setString(1, student.getName());
+            preparedStatement.setString(1, student.getFirstName());
             preparedStatement.setString(2, student.getLastName());
             preparedStatement.setDate(3, Date.valueOf(student.getEnrollmentDate()));
             preparedStatement.setString(4, student.getCpr());
