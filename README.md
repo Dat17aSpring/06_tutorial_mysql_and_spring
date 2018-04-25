@@ -47,17 +47,17 @@ If you have an existing application without the mysql dependency added from the 
 ````    
 
 ### UserDbRepsitory
-Create a new repository, call it **UserDbRepsitory**, and remember to implement a **IUserRepository** interface.
+Create a new repository, call it **StudentsDbRepsitory**, and remember to implement a **IStudentsRepository** interface.
 
 Add the following attributes and constructor to the class
 
 ````     
-    private ArrayList<User> users = new ArrayList<>();
+    private ArrayList<Student> students = new ArrayList<>();
     private Connection conn = null;
     private PreparedStatement prepareStatement = null;
     private ResultSet result = null;
     
-    public StudentInMemoryRepository() {
+    public StudentDbRepository() {
 
         try {
            conn = DbConnection.getConnection();
@@ -73,25 +73,22 @@ In the readAll method add:
     @Override
     public ArrayList<User> readAll() {
         try {
-            prepareStatement = conn.prepareStatement("SELECT * FROM users");
+            prepareStatement = conn.prepareStatement("SELECT * FROM students");
             result = prepareStatement.executeQuery();
 
             while (result.next())
             {
-                int id = result.getInt("users_id");
-                String userName = result.getString("user_name");
-                String email = result.getString("email");
-                String password = result.getString("password");
-
-                System.out.println(id + ", " + userName + ", " + email + ", " + password );
-
-                userss.add(new User(id, userName, email, password));
+                students.add(new Student(sqlRowSet.getInt("students_id"),
+                    sqlRowSet.getString("first_name"),
+                    sqlRowSet.getString("last_name"),
+                    sqlRowSet.getDate("enrollment_date").toLocalDate(),
+                    sqlRowSet.getString("cpr"))
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return users;
+        return students;
     }
 
 ````    
