@@ -71,18 +71,18 @@ In the readAll method add:
 
 ````     
     @Override
-    public ArrayList<User> readAll() {
+    public ArrayList<Student> readAll() {
         try {
             prepareStatement = conn.prepareStatement("SELECT * FROM students");
             result = prepareStatement.executeQuery();
 
             while (result.next())
             {
-                students.add(new Student(sqlRowSet.getInt("students_id"),
-                    sqlRowSet.getString("first_name"),
-                    sqlRowSet.getString("last_name"),
-                    sqlRowSet.getDate("enrollment_date").toLocalDate(),
-                    sqlRowSet.getString("cpr"))
+                students.add(new Student(result.getInt("students_id"),
+                    result.getString("first_name"),
+                    result.getString("last_name"),
+                    result.getDate("enrollment_date").toLocalDate(),
+                    result.getString("cpr"))
             }
 
         } catch (SQLException e) {
