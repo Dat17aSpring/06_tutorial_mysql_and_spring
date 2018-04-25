@@ -46,7 +46,7 @@ If you have an existing application without the mysql dependency added from the 
   }
 ````    
 
-### UserDbRepsitory
+### StudentsDbRepsitory
 Create a new repository, call it **StudentsDbRepsitory**, and remember to implement a **IStudentsRepository** interface.
 
 Add the following attributes and constructor to the class
