@@ -119,6 +119,19 @@ In the create method add:
 
 ````     
 
+The important thing in the above is that you pass in values via ```` ? ````
+
+````    
+	INSERT INTO students(first_name, last_name, enrollment_date, cpr)  VALUES (?,?,?, ?)
+	
+	.....   
+	
+	preparedStatement.setString(1, student.getFirstName());
+        preparedStatement.setString(2, student.getLastName());
+        preparedStatement.setDate(3, Date.valueOf(student.getEnrollmentDate()));
+        preparedStatement.setString(4, student.getCpr());
+
+````
 
 
 _<div align="right">&copy; clbo@kea.dk, 2018</div>_
