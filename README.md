@@ -1,7 +1,9 @@
 # 06 Tutorial: Preparedstatements, mysql and spring
+> This is an alternative to using the Spring Frameworks [Default Solution which we cover in teachings](https://github.com/Dat17aSpring/06_Tutorial_MySql_JDBC).
+
 ## Connect mysql and a Spring Boot Applications using Preparedstatements
 
-> This is an alternative to using the Spring Frameworks [Default Solution which we cover in teachings](https://github.com/Dat17aSpring/06_Tutorial_MySql_JDBC).
+
 
 1. Create a [new application](https://github.com/Dat17i/03_hello_spring/blob/master/README.md) using the Spring Boot Initializer.
 
